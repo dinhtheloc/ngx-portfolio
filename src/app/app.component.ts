@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  afterNextRender
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterOutlet } from '@angular/router';
 import { LogoComponent } from './logo/logo.component';
 @Component({
   selector: 'app-root',
@@ -11,5 +16,12 @@ import { LogoComponent } from './logo/logo.component';
   imports: [CommonModule, RouterOutlet, MatButtonModule, LogoComponent],
 })
 export class AppComponent {
-  title = 'angular';
+  @ViewChild('content') contentRef!: ElementRef;
+
+  constructor() {
+    afterNextRender(() => {
+      let html = `<spline-viewer url="https://prod.spline.design/nvsj2auUhEE7tBme/scene.splinecode"></spline-viewer>`;
+      this.contentRef.nativeElement.insertAdjacentHTML('afterend', html);
+    });
+  }
 }

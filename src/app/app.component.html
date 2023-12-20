@@ -1,7 +1,5 @@
 <main class="main">
   <div class="container mx-auto">
-    <!-- <app-logo></app-logo> -->
-    <div #content></div>
     <div class="flex flex-col lg:flex-row mt-6 gap-6">
       <div class="flex flex-col gap-6 items-center lg:items-start">
         <div class="card w-full lg:w-[430px]">
@@ -142,6 +140,10 @@
             </button>
           </a>
         </div>
+        <h2 id="Showcase" class="display-large primary-text !uppercase">Showcase</h2>
+        <div class="card w-full lg:w-[430px] rounded-xl p-4">
+          <spline-viewer hint loading-anim-type="spinner-small-dark" url="https://prod.spline.design/Fg6mRc3BlV4OVUHd/scene.splinecode"></spline-viewer>
+        </div>
       </div>
 
       <article class="prose lg:prose-xl">
@@ -254,10 +256,15 @@
             </li>
             <li>Build CSM tool using Vue.</li>
           </ul>
+
+          <h2 id="Showcase" class="uppercase primary-text">
+            &#60;spline-viewer&#62;
+          </h2>
+          <p>A place to design and collaborate in 3D</p>
         </div>
       </article>
     </div>
   </div>
-
+  
   <router-outlet></router-outlet>
 </main>
